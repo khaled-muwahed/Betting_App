@@ -67,9 +67,11 @@ function App() {
               Friendlies
               <div>
                 <Avatar alt="England" src={England} size = {20} />
+                 England
               </div>
               <div>
                 <Avatar alt="Austria" src={Austria} size = {20} />
+                  Austria
               </div>
             </div>
 
@@ -112,16 +114,19 @@ function App() {
 
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-            <div>
-              Yellow: {homeData.totalYellowCard?.[resource]}
-               Red: 0
+            <div style={{color: "white"}}>
+          
+              <div style={{display: "flex", margin: "10px"}}>
+                  <div style={yellowCardStyle}></div> : {homeData.totalYellowCard?.[resource]}
+                  <div style={redCardStyle}></div> : 0
+              </div>
             </div>
 
-            <div style={{ textAlign: 'right' }}>
-
-              Yellow: {awayData.totalYellowCard?.[resource]}
-          Red: 0
-
+            <div style={{ textAlign: 'right' , color: "white"}}>
+              <div style={{display: "flex", margin: "10px"}}>
+                <div style={yellowCardStyle}></div> {awayData.totalYellowCard?.[resource]}
+                <div style={redCardStyle}></div> : 0
+              </div>
             </div>
           </div>
 
@@ -149,5 +154,23 @@ const mainBarStyle = {
   color: "white",
   backgroundColor: "rgb(30, 42, 58)",
 } 
+const redCardStyle = {
+  width: "15px",
+  height: "20px",
+  borderRadius: "4px",
+  backgroundColor: "red",
+  marginRight: "10px",
+  marginLeft: "10px"
+
+}
+const yellowCardStyle = {
+  width: "15px",
+  height: "20px",
+  borderRadius: "4px",
+  backgroundColor: "yellow",
+  marginRight: "10px",
+
+}
+
 
 export default App;
